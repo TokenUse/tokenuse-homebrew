@@ -40,3 +40,10 @@ This repo owns the Homebrew formula for TokenUse CLI distribution.
 - Formula version and four platform checksums are correct.
 - README install commands remain valid.
 - Changes are limited to Homebrew tap scope.
+
+## AGENTS Hooks
+
+- Install local hooks: `bash scripts/setup-git-hooks.sh`
+- Pre-commit guard: `.githooks/pre-commit` -> `devops/agents/verify-agents.sh --staged`
+- CI guard: `.github/workflows/agents-guard.yml`
+- Temporary bypass (rare): `SKIP_AGENTS_GUARD=1 git commit -m "..."`
