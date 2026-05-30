@@ -1,30 +1,30 @@
 class Tokenuse < Formula
   desc "Track and analyze Claude Code usage"
   homepage "https://tokenuse.ai"
-  version "0.4.2"
+  version "0.4.3"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_darwin_amd64.tar.gz"
-      sha256 "4252a0afdd9b28bd513cd7e88843cbbe8c46217358541ba92d97e8a3d361d837"
+      sha256 "ed17a06596dc0a6f544834d067f506a2d0666db2f2c9ee249d5cf09eb49e81b9"
     end
 
     on_arm do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_darwin_arm64.tar.gz"
-      sha256 "56893091c948048a74f1bd3bc70f1c157cd2d137f90088654067115d27392f6f"
+      sha256 "0faec29113e220b0c08204dcc3dcc2a60ad6eef70668f9b56e4972dbc4794988"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_linux_amd64.tar.gz"
-      sha256 "b1ed8c722f4b4a82faa13c2438c81fca4ca7645820d3097b8fe14cea85ba37d9"
+      sha256 "d0f86dcad81eb2144316efbfa2b655e6170f9b92abd0b45805c4201c11a16f86"
     end
 
     on_arm do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_linux_arm64.tar.gz"
-      sha256 "219077a9ef9b774338d13cb632bc46193ce97f148c163f1dd06d444be08224ea"
+      sha256 "acc6b949c1e85c05aead0fb4dee806f1b702df8a5fdc851d1e6748403c08a306"
     end
   end
 
