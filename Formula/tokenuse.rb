@@ -37,6 +37,23 @@ class Tokenuse < Formula
     ohai "Run 'tokenuse' to start tracking (auto signs in if needed)."
   end
 
+  def caveats
+    <<~EOS
+      TokenUse runs a per-user background tracker after login.
+
+      Before uninstalling the package, run:
+        tokenuse uninstall
+
+      That stops and removes the tracker service, removes the managed daemon
+      binary, and offers to delete local TokenUse data. If the tokenuse command
+      is already gone, remove these paths manually:
+        macOS:  ~/Library/LaunchAgents/ai.tokenuse.tracker.plist
+        Linux:  ~/.config/systemd/user/tokenuse-tracker.service
+        binary: ~/.local/share/tokenuse/bin/tokenuse
+        data:   ~/.config/tokenuse ~/.local/share/tokenuse ~/.cache/tokenuse
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/tokenuse version")
   end
