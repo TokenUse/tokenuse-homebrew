@@ -1,0 +1,29 @@
+name: Formula Test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  formula-test:
+    name: Brew audit install and test
+    runs-on: macos-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Runner platform
+        run: uname -s
+
+      - name: Audit formula
+        run: brew audit --strict --formula tokenuse
+
+      - name: Install formula
+        run: brew install --formula ./Formula/tokenuse.rb
+
+      - name: Test formula
+        run: brew test tokenuse
