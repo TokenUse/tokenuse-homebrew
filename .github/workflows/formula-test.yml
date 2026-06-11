@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    - cron: '27 8 * * 1'
 
 jobs:
   formula-test:
@@ -18,6 +20,17 @@ jobs:
 
       - name: Runner platform
         run: uname -s
+
+      - name: Verify tap redirect
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_REPO_ID: '1147062379'
+        run: |
+          actual_id="$(gh api repos/tokenuse/homebrew-tap --jq .id)"
+          if [ "$actual_id" != "$EXPECTED_REPO_ID" ]; then
+            echo "::error::tokenuse/homebrew-tap resolved to repo id ${actual_id}, expected ${EXPECTED_REPO_ID}"
+            exit 1
+          fi
 
       - name: Audit formula
         run: brew audit --strict --formula tokenuse
