@@ -35,6 +35,8 @@ class Tokenuse < Formula
 
   def install
     bin.install "tokenuse"
+    pkgshare.install "LICENSE" if File.exist?("LICENSE")
+    pkgshare.install "THIRD-PARTY-NOTICES.txt" if File.exist?("THIRD-PARTY-NOTICES.txt")
   end
 
   def post_install
