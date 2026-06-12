@@ -1,11 +1,11 @@
 class Tokenuse < Formula
-  desc "Track Claude Code and OpenAI Codex usage"
+  desc "Track Claude Code and OpenAI Codex usage and costs"
   homepage "https://tokenuse.ai"
   version "0.4.4"
   license "MIT"
 
   livecheck do
-    url "https://github.com/tokenuse/tokenuse/releases/latest"
+    url :stable
     strategy :github_latest
   end
 

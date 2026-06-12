@@ -1,5 +1,7 @@
 # TokenUse Homebrew Tap
 
+Track and analyze Claude Code and OpenAI Codex usage and costs with TokenUse.
+
 ## Install
 
 ```bash
@@ -35,4 +37,5 @@ If the `tokenuse` binary is already gone, remove these paths manually:
 ## Links
 
 - [Website](https://tokenuse.ai)
-- [Documentation](https://github.com/tokenuse/tokenuse-cli#readme)
+- [Documentation](https://tokenuse.ai/docs)
+- [Changelog](https://github.com/tokenuse/tokenuse/releases)
