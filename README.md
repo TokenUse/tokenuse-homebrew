@@ -41,3 +41,4 @@ If the `tokenuse` binary is already gone, remove these paths manually:
 - [Website](https://tokenuse.ai)
 - [Documentation](https://tokenuse.ai/docs)
 - [Changelog](https://github.com/tokenuse/tokenuse/releases)
+- [Security](SECURITY.md)
