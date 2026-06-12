@@ -51,7 +51,9 @@ class Tokenuse < Formula
 
       That stops and removes the tracker service, removes the managed daemon
       binary, and offers to delete local TokenUse data. If the tokenuse command
-      is already gone, remove these paths manually:
+      does not have the uninstall command yet, run `tokenuse logout` first and
+      type `delete` when prompted. If the tokenuse command is already gone,
+      remove these paths manually:
         macOS:  ~/Library/LaunchAgents/ai.tokenuse.tracker.plist
         Linux:  ~/.config/systemd/user/tokenuse-tracker.service
         binary: ~/.local/share/tokenuse/bin/tokenuse

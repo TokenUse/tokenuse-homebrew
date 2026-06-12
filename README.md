@@ -25,6 +25,8 @@ brew untap tokenuse/tap
 
 `tokenuse uninstall` stops and removes the background tracker before Homebrew removes the package. It also asks whether to delete local TokenUse data such as config, credentials, queued events, prompts, cursors, cache, and logs.
 
+If your installed version does not have `tokenuse uninstall`, run `tokenuse logout` first and type `delete` when prompted, then uninstall the formula.
+
 If the `tokenuse` binary is already gone, remove these paths manually:
 
 - `~/Library/LaunchAgents/ai.tokenuse.tracker.plist` on macOS
