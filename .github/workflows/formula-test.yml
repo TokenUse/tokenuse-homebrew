@@ -32,11 +32,14 @@ jobs:
             exit 1
           fi
 
+      - name: Tap local checkout
+        run: brew tap --custom-remote tokenuse/tap "$GITHUB_WORKSPACE"
+
       - name: Audit formula
-        run: brew audit --strict --formula tokenuse
+        run: brew audit --strict --formula tokenuse/tap/tokenuse
 
       - name: Install formula
-        run: brew install --formula ./Formula/tokenuse.rb
+        run: brew install --formula tokenuse/tap/tokenuse
 
       - name: Test formula
-        run: brew test tokenuse
+        run: brew test tokenuse/tap/tokenuse
