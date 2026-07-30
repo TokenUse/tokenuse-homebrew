@@ -12,24 +12,24 @@ class Tokenuse < Formula
   on_macos do
     on_intel do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_darwin_amd64.tar.gz"
-      sha256 "6007ea04defdda5fb8ffff40d468bf90086824c050abeca9f3fc0c44e04160a1"
+      sha256 "61b6f2ea681716ae99578322244f98b35c6729731bc95ed0d89cdfdc529a52d4"
     end
 
     on_arm do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_darwin_arm64.tar.gz"
-      sha256 "7f22ec557dbc19c25bf4cabb3bc62bb399587c93e131b136a555e5d0771b414e"
+      sha256 "69358d39747efb6557a90002609be0472eeabc7abc2dacce6198dd39349f1341"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_linux_amd64.tar.gz"
-      sha256 "b21288ad7ba35174b9040f1ab4037dea1e45c698670269a06b2f6829a8f7167f"
+      sha256 "04f7d9f3ca6869165474b845c633be4d1963bc860c2603ac5697505539232b59"
     end
 
     on_arm do
       url "https://github.com/tokenuse/tokenuse/releases/download/v#{version}/tokenuse_#{version}_linux_arm64.tar.gz"
-      sha256 "0d9b6411f4f40967d1c475e791b20973be68d3aa598ce646b554be16b91c33d9"
+      sha256 "1767702f0f84e95e699bb440e12d74c743cbd2b8a45918f38019ab15859ebc51"
     end
   end
 
