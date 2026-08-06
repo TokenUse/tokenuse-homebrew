@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a Homebrew formula bug.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a formula bug. Do not include tokens, secrets, prompt text, transcripts, or private paths.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the Homebrew install, upgrade, or launch problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: formula-version
+    attributes:
+      label: Formula version
+      placeholder: "tokenuse 0.4.4"
+    validations:
+      required: true
+  - type: input
+    id: brew-version
+    attributes:
+      label: Homebrew version and platform
+      placeholder: "Homebrew 4.5.0 on macOS 15 arm64"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The exact brew command you ran.
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted output
+      description: Remove tokens, secrets, prompt text, transcripts, and private paths.
+      render: shell
+    validations:
+      required: false
