@@ -28,6 +28,33 @@ from untrusted tap`, run `brew trust tokenuse/tap` and install again.
 brew upgrade tokenuse
 ```
 
+### If `brew update` reports an error in this tap
+
+On 2026-08-06 this repository's history was rewritten and force-pushed. `brew update`
+updates a tap by rebasing your local copy onto the remote, and a rebase onto unrelated
+history cannot resolve itself — it stops partway and leaves conflict markers in
+`Formula/tokenuse.rb`, after which the formula no longer parses and every `brew`
+command touching the tap fails.
+
+Re-tapping is the reliable fix. It does not touch the installed binary or your
+TokenUse data:
+
+```bash
+brew untap tokenuse/tap
+brew tap tokenuse/tap
+```
+
+To repair the existing checkout in place instead:
+
+```bash
+cd "$(brew --repository)/Library/Taps/tokenuse/homebrew-tap"
+git rebase --abort 2>/dev/null
+git reset --hard origin/main
+git clean -fd
+```
+
+This is a one-time fix. A fresh `brew tap tokenuse/tap` is unaffected.
+
 ## Uninstall
 
 ```bash
